@@ -1,1 +1,26 @@
 
+import os
+import datetime
+
+with open("devices.txt") as f:
+    devices = f.read().splitlines()
+
+with open("log.txt", "a") as log:
+    for device in devices:
+        response = os.system(f"ping -c 1 {device} > /dev/null")
+        status = "ONLINE" if response == 0 else "OFFLINE"
+        log.write(f"{datetime.datetime.now()} - {device} - {status}\n")
+
+# Network Monitoring Script
+
+This Python script checks if network devices are online or offline using ping.
+
+## Requirements
+- Linux
+- Python 3
+
+## Usage
+python3 monitor.py
+
+8.8.8.8
+1.1.1.1
