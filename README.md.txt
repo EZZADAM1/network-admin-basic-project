@@ -1,3 +1,8 @@
-# User Management Script
+# Network & System Administration Projects
 
-Basic Bash script for Linux user administration.
+This repository contains basic projects for:
+- Network monitoring
+- Linux user management
+- System administration scripting
+
+Created for learning and professional portfolio purposes.
