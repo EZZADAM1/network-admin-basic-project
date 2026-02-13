@@ -1,0 +1,11 @@
+import os
+import datetime
+
+with open("devices.txt") as f:
+    devices = f.read().splitlines()
+
+with open("log.txt", "a") as log:
+    for device in devices:
+        response = os.system(f"ping -c 1 {device} > /dev/null")
+        status = "ONLINE" if response == 0 else "OFFLINE"
+        log.write(f"{datetime.datetime.now()} - {device} - {status}\n")

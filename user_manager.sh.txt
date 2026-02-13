@@ -1,0 +1,25 @@
+#!/bin/bash
+
+echo "1) Add User"
+echo "2) Delete User"
+echo "3) List Users"
+read -p "Choose option: " option
+
+case $option in
+1)
+read -p "Username: " user
+sudo useradd $user
+echo "User added"
+;;
+2)
+read -p "Username: " user
+sudo userdel $user
+echo "User deleted"
+;;
+3)
+cut -d: -f1 /etc/passwd
+;;
+*)
+echo "Invalid option"
+;;
+esac
